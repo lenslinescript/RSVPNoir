@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Invitation - Sample (Noir)</title>
+<link rel="icon" type="image/png" href="g&d.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--panel:#131211;--gold:#c9a24b;--gold2:#f1d98a;--text:#d9d4c7;--mute:#8d887b;--serif:'Cormorant Garamond',Georgia,serif;--disp:'Cinzel',Georgia,serif;--g:linear-gradient(135deg,#a8802f,#f1d98a 45%,#b98f3a)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:1.15rem;line-height:1.7;text-align:center}
+a{color:inherit;text-decoration:none}
+.gold{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo{filter:brightness(0) invert(76%) sepia(38%) saturate(600%) hue-rotate(2deg) brightness(92%)}
+.eyebrow{font-family:var(--disp);font-size:.7rem;letter-spacing:.45em;color:var(--gold);text-transform:uppercase}
+h2{font-family:var(--disp);font-weight:400;font-size:clamp(1.6rem,4.5vw,2.4rem);letter-spacing:.12em;margin:10px 0 18px;text-transform:uppercase}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin-bottom:54px;font-size:.8rem}
+.rule:before,.rule:after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule:after{transform:scaleX(-1)}
+section{padding:100px 22px;position:relative}
+.wrap{max-width:900px;margin:auto}
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:8px 28px;background:rgba(10,10,10,.88);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,75,.25)}
+nav img{height:42px;display:block}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+nav li a{font-family:var(--disp);font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text);transition:color .2s}
+nav li a:hover{color:var(--gold2)}
+.btn{display:inline-block;border:1px solid var(--gold);color:var(--gold2);padding:11px 26px;font-family:var(--disp);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;background:transparent;cursor:pointer;transition:.3s}
+.btn:hover,.btn.solid{background:var(--g);color:#0a0a0a;border-color:transparent}
+.btn.solid:hover{filter:brightness(1.12)}
+@media(max-width:780px){nav li:not(:last-child){display:none}}
+/* hero */
+.hero{min-height:100vh;display:grid;place-items:center;padding:110px 22px 70px;background:radial-gradient(ellipse at 50% 38%,rgba(201,162,75,.16),transparent 60%),var(--bg)}
+.frame{position:relative;width:min(640px,100%);padding:70px 26px;border:1px solid rgba(201,162,75,.55)}
+.frame:before{content:"";position:absolute;inset:8px;border:1px solid rgba(201,162,75,.22);pointer-events:none}
+.frame i{position:absolute;width:14px;height:14px;background:var(--bg);border:1px solid var(--gold);transform:rotate(45deg)}
+.frame i:nth-of-type(1){top:-8px;left:-8px}.frame i:nth-of-type(2){top:-8px;right:-8px}.frame i:nth-of-type(3){bottom:-8px;left:-8px}.frame i:nth-of-type(4){bottom:-8px;right:-8px}
+.frame .logo{width:110px;margin:-20px auto 6px;display:block}
+.sub{font-style:italic;color:var(--mute);margin-bottom:12px}
+h1{font-family:var(--disp);font-weight:400;font-size:clamp(2.3rem,9vw,4.2rem);letter-spacing:.1em;line-height:1.15;text-transform:uppercase}
+h1 span{display:block;font-family:var(--serif);font-style:italic;font-size:.5em;letter-spacing:0;margin:2px 0;color:var(--gold)}
+.date{font-family:var(--disp);letter-spacing:.4em;font-size:.85rem;margin:26px 0 24px;color:var(--gold2)}
+#cd{display:flex;justify-content:center;gap:12px;margin-bottom:32px}
+#cd div{border:1px solid rgba(201,162,75,.4);width:68px;padding:10px 0}
+#cd b{display:block;font-family:var(--disp);font-weight:400;font-size:1.5rem;color:var(--gold2);line-height:1.3}
+#cd small{font-family:var(--disp);font-size:.52rem;letter-spacing:.25em;color:var(--mute)}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* story */
+.chap{display:grid;grid-template-columns:90px 1fr;gap:26px;text-align:left;padding:34px 0;border-top:1px solid rgba(201,162,75,.2)}
+.chap:last-child{border-bottom:1px solid rgba(201,162,75,.2)}
+.chap b{font-family:var(--disp);font-weight:400;font-size:2.6rem;line-height:1}
+.chap h3{font-family:var(--disp);font-weight:400;font-size:1rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px}
+.chap p{color:var(--text)}
+@media(max-width:560px){.chap{grid-template-columns:56px 1fr;gap:14px}.chap b{font-size:1.8rem}}
+/* timeline */
+.alt{background:var(--panel)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(201,162,75,.3);border:1px solid rgba(201,162,75,.3)}
+.grid div{background:var(--panel);padding:34px 20px}
+.grid time{font-family:var(--disp);font-size:1.5rem;display:block;margin-bottom:8px}
+.grid h3{font-family:var(--disp);font-weight:400;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px}
+.grid p{font-size:1rem;color:var(--mute);line-height:1.5;margin-bottom:10px}
+.grid em{font-size:.9rem;color:var(--gold)}
+/* dress */
+.lead{max-width:520px;margin:-26px auto 34px;color:var(--mute)}
+.sw{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.sw span{font-family:var(--disp);font-size:.62rem;letter-spacing:.25em;text-transform:uppercase}
+.sw b{display:block;width:64px;height:64px;margin:0 auto 10px;transform:rotate(45deg) scale(.8);border:1px solid var(--gold)}
+.avoid{font-style:italic;color:var(--mute)}
+/* gallery */
+.gal{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 26px;scrollbar-color:var(--gold) transparent}
+.gal div{flex:0 0 min(250px,68%);aspect-ratio:4/5;scroll-snap-align:center;display:grid;place-items:center;font-family:var(--disp);font-size:.75rem;letter-spacing:.3em;color:var(--gold);background:linear-gradient(160deg,#1b1914,#0e0d0b);border:1px solid rgba(201,162,75,.45);outline:1px solid rgba(201,162,75,.18);outline-offset:-9px}
+/* rsvp */
+.rsvp{max-width:520px;margin:auto;padding:52px 34px;border:1px solid rgba(201,162,75,.55);background:var(--bg);text-align:left;position:relative}
+.rsvp:before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,162,75,.2);pointer-events:none}
+.rsvp h2{text-align:center;margin-bottom:6px}
+.dl{text-align:center;color:var(--mute);margin-bottom:30px}
+label,legend{display:block;font-family:var(--disp);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+input[type=text],textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(201,162,75,.4);color:var(--text);font:inherit;padding:8px 0;margin-bottom:26px;outline:0;transition:border .2s}
+input[type=text]:focus,textarea:focus{border-color:var(--gold2)}
+::placeholder{color:#5f5b50}
+fieldset{border:0;margin-bottom:26px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.opts label{margin:0;cursor:pointer}
+.opts input{position:absolute;opacity:0}
+.opts span{display:block;border:1px solid rgba(201,162,75,.4);padding:14px 6px;text-align:center;font-family:var(--serif);font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--text);transition:.25s}
+.opts input:checked+span{background:var(--g);color:#0a0a0a;border-color:transparent}
+.opts input:focus-visible+span{outline:1px solid var(--gold2);outline-offset:3px}
+.step{display:flex;align-items:center;gap:18px;margin:8px 0 26px}
+.step button{width:38px;height:38px;border:1px solid var(--gold);background:none;color:var(--gold2);font-size:1.2rem;cursor:pointer}
+.step output{font-family:var(--disp);font-size:1.4rem;min-width:24px;text-align:center}
+.err{color:#e07a6a;font-size:1rem;margin-bottom:14px}
+.rsvp .btn{width:100%;padding:15px}
+.ok{text-align:center;padding:20px 0}
+.ok svg{width:56px;height:56px;stroke:var(--gold);fill:none;stroke-width:2.5;margin-bottom:12px}
+.ok h3{font-family:var(--disp);font-weight:400;letter-spacing:.15em;margin-bottom:6px}
+[hidden]{display:none!important}
+footer{padding:50px 22px 100px;border-top:1px solid rgba(201,162,75,.25);font-family:var(--disp);font-size:.7rem;letter-spacing:.4em;color:var(--mute)}
+footer img{height:56px;display:block;margin:0 auto 10px}
+#music{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--bg);color:var(--gold2);border:1px solid var(--gold);padding:10px 18px;font:400 .62rem var(--disp);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+.fade{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.fade.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<audio id="bg" loop><source src="Johnoy Danao - Ikaw at Ako (official music video).mp3" type="audio/mpeg"></audio>
+<button id="music" type="button">♪ Play Music</button>
+
+<nav>
+  <a href="#top" aria-label="Back to top"><img class="logo" src="g&d.png" alt="Monogram"></a>
+  <ul>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#details">Details</a></li>
+    <li><a href="#attire">Dress Code</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#rsvp" class="btn" style="padding:8px 20px">RSVP</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="frame">
+    <i></i><i></i><i></i><i></i>
+    <img class="logo" src="g&d.png" alt="">
+    <p class="sub">Request the honor of your presence</p>
+    <h1 class="gold">Groom<span>and</span>Bride</h1>
+    <p class="date">JUNE 12 · 2027</p>
+    <div id="cd"><div><b id="d">00</b><small>DAYS</small></div><div><b id="h">00</b><small>HOURS</small></div><div><b id="m">00</b><small>MINS</small></div><div><b id="s">00</b><small>SECS</small></div></div>
+    <div class="btns"><a href="#rsvp" class="btn solid">RSVP</a><a href="#details" class="btn">Details</a></div>
+  </div>
+</header>
+
+<section id="story"><div class="wrap fade">
+  <span class="eyebrow">Our Story</span><h2 class="gold">A Love Story</h2><div class="rule">◆</div>
+  <div class="chap"><b class="gold">I</b><div><h3>How We Met</h3><p>Share how you two first met here. A short, elegant paragraph that introduces the couple to your guests.</p></div></div>
+  <div class="chap"><b class="gold">II</b><div><h3>The Proposal</h3><p>Tell the story of the proposal: where it happened, how it felt, and the moment everything changed.</p></div></div>
+  <div class="chap"><b class="gold">III</b><div><h3>Our Journey</h3><p>Add a few lines about the adventures and memories so far, and what you look forward to in this next chapter.</p></div></div>
+</div></section>
+
+<section id="details" class="alt"><div class="wrap fade">
+  <span class="eyebrow">Day Schedule</span><h2 class="gold">Wedding Timeline</h2><div class="rule">◆</div>
+  <div class="grid">
+    <div><time class="gold">9:00 AM</time><h3>Guest Arrival</h3><p>Please arrive on time and find your seat.</p><em>Ceremony Venue</em></div>
+    <div><time class="gold">10:00 AM</time><h3>Ceremony</h3><p>The ceremony begins with prayers and vows.</p><em>Ceremony Venue</em></div>
+    <div><time class="gold">11:30 AM</time><h3>Photo Session</h3><p>Group and family photos with the newlyweds.</p><em>Ceremony Venue</em></div>
+    <div><time class="gold">12:30 PM</time><h3>Reception</h3><p>Join us for dinner, toasts, and celebration.</p><em>Reception Venue</em></div>
+  </div>
+</div></section>
+
+<section id="attire"><div class="wrap fade">
+  <span class="eyebrow">Dress Code</span><h2 class="gold">Black Tie Optional</h2><div class="rule">◆</div>
+  <p class="lead">Dress to impress in our colors of the evening.</p>
+  <div class="sw">
+    <span><b style="background:#0a0a0a"></b>Black</span><span><b style="background:#c9a24b"></b>Gold</span><span><b style="background:#e8dcc0"></b>Champagne</span><span><b style="background:#3b2a2a"></b>Bordeaux</span>
+  </div>
+  <p class="avoid">Please avoid white and ivory, reserved for the bride.</p>
+</div></section>
+
+<section id="gallery" class="alt"><div class="wrap fade">
+  <span class="eyebrow">Gallery</span><h2 class="gold">Our Moments</h2><div class="rule">◆</div>
+  <div class="gal"><div>PHOTO I</div><div>PHOTO II</div><div>PHOTO III</div><div>PHOTO IV</div><div>PHOTO V</div><div>PHOTO VI</div></div>
+</div></section>
+
+<section id="rsvp"><div class="fade">
+  <div class="rsvp">
+    <form id="f" novalidate>
+      <h2 class="gold">Will you join us?</h2>
+      <p class="dl">Kindly reply by May 1, 2027</p>
+      <label for="n">Full name</label>
+      <input id="n" type="text" placeholder="e.g. Jane Doe" autocomplete="name">
+      <fieldset><legend>Can you make it?</legend>
+        <div class="opts">
+          <label><input type="radio" name="a" value="yes"><span>Joyfully accepts</span></label>
+          <label><input type="radio" name="a" value="no"><span>Regretfully declines</span></label>
+        </div>
+      </fieldset>
+      <div id="gf" hidden><label>Number of guests</label>
+        <div class="step"><button type="button" data-s="-1" aria-label="Fewer">&minus;</button><output id="g">1</output><button type="button" data-s="1" aria-label="More">+</button></div>
+      </div>
+      <label for="msg">Message for the couple (optional)</label>
+      <textarea id="msg" rows="2" placeholder="Share a wish or a song request"></textarea>
+      <p class="err" id="e" role="alert" hidden></p>
+      <button class="btn solid" type="submit">Send my RSVP</button>
+    </form>
+    <div class="ok" id="ok" hidden>
+      <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 14-16"/></svg>
+      <h3 class="gold" id="okt">Thank you!</h3><p id="okp"></p>
+    </div>
+  </div>
+</div></section>
+
+<footer><img class="logo" src="g&d.png" alt="Monogram">JUNE 12 · 2027</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const target=new Date("2027-06-12T00:00:00").getTime();
+function tick(){const t=Math.max(0,target-Date.now()),p=n=>String(n).padStart(2,"0");
+$("d").textContent=p(Math.floor(t/864e5));$("h").textContent=p(Math.floor(t%864e5/36e5));$("m").textContent=p(Math.floor(t%36e5/6e4));$("s").textContent=p(Math.floor(t%6e4/1e3))}
+tick();setInterval(tick,1000);
+$("music").onclick=()=>{const a=$("bg"),b=$("music");
+if(a.paused){a.play().then(()=>b.textContent="❚❚ Pause Music").catch(()=>{})}else{a.pause();b.textContent="♪ Play Music"}};
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll(".fade").forEach(el=>io.observe(el));
+// RSVP (sample mode: nothing is sent anywhere)
+const f=$("f");let guests=1;
+f.querySelectorAll("[name=a]").forEach(r=>r.onchange=()=>{$("gf").hidden=f.a.value!=="yes";$("e").hidden=true});
+f.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{guests=Math.min(5,Math.max(1,guests+ +b.dataset.s));$("g").textContent=guests});
+f.onsubmit=e=>{e.preventDefault();const name=$("n").value.trim(),a=f.a.value,err=$("e");
+if(!name){err.textContent="Please enter your full name.";err.hidden=false;return}
+if(!a){err.textContent="Please let us know if you can make it.";err.hidden=false;return}
+$("okt").textContent="Thank you, "+name.split(" ")[0]+"!";
+$("okp").textContent=a==="yes"?"Your RSVP is in. We can't wait to celebrate with you!":"Your response is received. You'll be missed, and we're grateful you let us know.";
+f.hidden=true;$("ok").hidden=false};
+</script>
+</body>
+</html>
